@@ -1,0 +1,91 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Cairo', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #070605;
+    color: #f4dfb6;
+    overflow-x: hidden;
+  }
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Golden HUD Chamfered & Glowing Styles matching Reference Image */
+.hud-header-title-plate {
+  background: linear-gradient(135deg, rgba(198, 125, 30, 0.48) 0%, rgba(92, 54, 12, 0.72) 55%, rgba(36, 22, 6, 0.9) 100%);
+  border-bottom: 2px solid #f5b851;
+  border-left: 2px solid #e5a039;
+  box-shadow: 0 4px 24px rgba(229, 160, 57, 0.35), inset 0 1px 0 rgba(255, 226, 168, 0.45);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 28px 0);
+}
+
+.hud-tab-active {
+  background: linear-gradient(180deg, rgba(235, 168, 64, 0.85) 0%, rgba(145, 86, 15, 0.92) 100%);
+  border-top: 1px solid #ffd88a;
+  color: #fff8e7;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+  clip-path: polygon(14px 0, 100% 0, calc(100% - 14px) 100%, 0 100%);
+  box-shadow: 0 0 18px rgba(229, 160, 57, 0.45);
+}
+
+.hud-tab-inactive {
+  background: linear-gradient(180deg, rgba(38, 28, 18, 0.85) 0%, rgba(18, 14, 9, 0.92) 100%);
+  border-top: 1px solid rgba(229, 160, 57, 0.35);
+  color: #c8a870;
+  clip-path: polygon(14px 0, 100% 0, calc(100% - 14px) 100%, 0 100%);
+}
+
+.hud-tab-inactive:hover {
+  background: linear-gradient(180deg, rgba(78, 52, 22, 0.85) 0%, rgba(36, 24, 12, 0.95) 100%);
+  color: #ffe2a8;
+}
+
+.hud-section-bar {
+  background: linear-gradient(270deg, rgba(186, 118, 26, 0.38) 0%, rgba(90, 54, 14, 0.16) 65%, rgba(15, 11, 7, 0) 100%);
+  border-top: 1px solid rgba(229, 160, 57, 0.42);
+  border-bottom: 1px solid rgba(229, 160, 57, 0.42);
+  border-right: 2px solid #f5b851;
+  position: relative;
+}
+
+.hud-select-box {
+  background: rgba(16, 13, 9, 0.92);
+  border: 1px solid rgba(229, 160, 57, 0.65);
+  box-shadow: inset 0 0 10px rgba(229, 160, 57, 0.15);
+}
+
+.hud-text-glow {
+  text-shadow: 0 0 14px rgba(245, 184, 81, 0.65), 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+/* Dark Gold Filter for Leaflet Street Map Tiles */
+.leaflet-golden-tiles .leaflet-tile-pane {
+  filter: invert(100%) hue-rotate(190deg) sepia(65%) saturate(220%) brightness(75%) contrast(125%);
+}
+
+.leaflet-container {
+  background: #080705 !important;
+  font-family: var(--font-sans) !important;
+}
+
+/* Animated Flight Line Dash */
+@keyframes flightDash {
+  to {
+    stroke-dashoffset: -48;
+  }
+}
+
+.animate-flight-arc {
+  stroke-dasharray: 7 5;
+  animation: flightDash 2.2s linear infinite;
+}

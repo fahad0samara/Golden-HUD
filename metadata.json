@@ -1,0 +1,6 @@
+{
+  "name": "Middle East Geo-Analytics & Operations HUD",
+  "description": "Arabic RTL real-time geolocation and data visualization command dashboard for the Middle East with golden HUD aesthetics.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
